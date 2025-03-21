@@ -20,7 +20,7 @@ def run_modbus_server(store):
 
     # Запускаем Modbus TCP сервер
     print("Starting Modbus TCP server on localhost:502")
-    StartTcpServer(context, address=("localhost", 502))
+    StartTcpServer(context, address=("192.168.1.3", 502))
 
 # Функция для обновления значений регистров
 def update_registers(store):
@@ -59,7 +59,7 @@ def main_thread(store):
         # Задержка 2 секунды
         time.sleep(2)
 
-if name == "main":
+if __name__ == "main":
     # Создаем блок данных для holding registers
     store = ModbusSlaveContext(
         hr=ModbusSequentialDataBlock(0, [0] * 100)  # 100 регистров, инициализированных значением 0
