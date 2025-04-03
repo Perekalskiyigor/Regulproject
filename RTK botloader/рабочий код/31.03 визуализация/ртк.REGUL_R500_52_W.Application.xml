@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.0.0.0" runtimeid="11.7.2.10" libversion="3.5.17.0" compiler="3.5.17.30" lmm="3.5.17.0" profile="Astra.IDE_V1.7+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="ртк" devicename="REGUL_R500_52_W" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_STRING_20_" size="21" swapsize="0" typeclass="String" iecname="STRING(20)" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="relizeA">
+        <Node name="ButtonLoadOrders" type="T_BOOL" access="ReadWrite" />
+        <Node name="ButtonSelectOrder" type="T_BOOL" access="ReadWrite" />
+        <Node name="cnt_defect" type="T_INT" access="ReadWrite" />
+        <Node name="igor" type="T_INT" access="ReadWrite" />
+        <Node name="max_defect" type="T_INT" access="ReadWrite" />
+        <Node name="NameBoard" type="T_WORD" access="ReadWrite" />
+        <Node name="Order" type="T_STRING_20_" access="ReadWrite" />
+        <Node name="Past_val" type="T_INT" access="ReadWrite" />
+        <Node name="ReadyTable1" type="T_BOOL" access="ReadWrite" />
+        <Node name="ReadyTable1Text" type="T_WORD" access="ReadWrite" />
+        <Node name="ReadyTable2" type="T_BOOL" access="ReadWrite" />
+        <Node name="ReadyTable2Text" type="T_WORD" access="ReadWrite" />
+        <Node name="ReadyTable3" type="T_BOOL" access="ReadWrite" />
+        <Node name="ReadyTable3Text" type="T_WORD" access="ReadWrite" />
+        <Node name="Script_version" type="T_WORD" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
