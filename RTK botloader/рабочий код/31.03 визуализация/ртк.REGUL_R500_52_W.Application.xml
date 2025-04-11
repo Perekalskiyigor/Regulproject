@@ -2,7 +2,7 @@
 <Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
   <Header>
     <Version>3.5.14.0</Version>
-    <SymbolConfigObject version="4.0.0.0" runtimeid="11.7.2.10" libversion="3.5.17.0" compiler="3.5.17.30" lmm="3.5.17.0" profile="Astra.IDE_V1.7+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <SymbolConfigObject version="4.0.0.0" runtimeid="11.7.2.10" libversion="3.5.17.0" compiler="3.5.17.30" lmm="3.5.17.0" profile="Astra.IDE_V1.7.2.1+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
     <ProjectInfo name="ртк" devicename="REGUL_R500_52_W" appname="Application" />
   </Header>
   <TypeList>
