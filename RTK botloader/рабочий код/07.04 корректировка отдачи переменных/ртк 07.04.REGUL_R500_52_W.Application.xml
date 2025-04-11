@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.0.0.0" runtimeid="11.7.2.10" libversion="3.5.17.0" compiler="3.5.17.30" lmm="3.5.17.0" profile="Astra.IDE_V1.7.2.1+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="ртк 07.04" devicename="REGUL_R500_52_W" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_BYTE" size="1" swapsize="1" typeclass="Byte" iecname="BYTE" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="relizeA">
+        <Node name="DIRX" type="T_BOOL" access="ReadWrite" />
+        <Node name="DIRZ" type="T_BOOL" access="ReadWrite" />
+        <Node name="duty" type="T_BYTE" access="ReadWrite" />
+        <Node name="ENAX" type="T_BOOL" access="ReadWrite" />
+        <Node name="ENAZ" type="T_BOOL" access="ReadWrite" />
+        <Node name="error" type="T_INT" access="ReadWrite" />
+        <Node name="freq" type="T_UINT" access="ReadWrite" />
+        <Node name="green" type="T_BOOL" access="ReadWrite" />
+        <Node name="IsInitializedX" type="T_BOOL" access="ReadWrite" />
+        <Node name="IsInitializedZ" type="T_BOOL" access="ReadWrite" />
+        <Node name="kob_Rob_Action" type="T_INT" access="ReadWrite" />
+        <Node name="red" type="T_BOOL" access="ReadWrite" />
+        <Node name="Reg_move_table" type="T_INT" access="ReadWrite" />
+        <Node name="Reg_updown_bootloader" type="T_INT" access="ReadWrite" />
+        <Node name="Rob_Action" type="T_INT" access="ReadWrite" />
+        <Node name="step" type="T_BOOL" access="ReadWrite" />
+        <Node name="sub_kob_Rob_Action" type="T_INT" access="ReadWrite" />
+        <Node name="Sub_Reg_move_table" type="T_INT" access="ReadWrite" />
+        <Node name="Sub_Reg_updown_bootloader" type="T_INT" access="ReadWrite" />
+        <Node name="sub_Rob_Action" type="T_INT" access="ReadWrite" />
+        <Node name="Xleft" type="T_BOOL" access="ReadWrite" />
+        <Node name="Xright" type="T_BOOL" access="ReadWrite" />
+        <Node name="yellow" type="T_BOOL" access="ReadWrite" />
+        <Node name="Zdown" type="T_BOOL" access="ReadWrite" />
+        <Node name="Zup" type="T_BOOL" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
