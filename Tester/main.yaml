@@ -1,0 +1,57 @@
+log_level: 'INFO'
+
+# ��������� REST �������
+rest_server:
+  type: 'FLASK'
+  params:
+    host: '192.168.1.100'
+    port: 5000
+
+# ��������� �������
+stands:
+  - stand_id: 'nt_kto_rtk_1'
+    params:
+      plc:
+        host: '192.168.1.4'
+        port: '48010'
+
+      # ��������� ���������� ����������� ��������
+      firmware_repository:
+        type: 'NOT_REPO' # ��������� ����������� �� ������������
+        params: { }
+
+      # ��������� �������� data_matrix
+      scanners: [ ] # ������� �����������
+
+      # ��������� ��������������
+      fw_loaders:
+        j_link:
+          serial_number: '1234567'
+
+      # ��������� ����������� ������ ����
+      board_info:
+        provider:
+          type: 'NOT_PROVIDER' # ��������� �����������
+          params: { }
+
+      # ��������� �� �������� ����������� ������������
+      send_test_results:
+        # ��������� ���������� ������
+        plc_file_loader:
+          # ��������� FTP ������� ���
+          plc_ftp:
+            user: 'plcuser'
+            password: 'service'
+            reconnect_count: 3
+            timeout: 10
+          # ������� ����������, ���� ���������� ��������� ���������� ������������
+          dest_dir: 'C:\Users\i.perekalskii\Desktop\REPORTS'
+
+
+        # ��������� ����������
+        consumer:
+          type: 'RTK'
+          params:
+            url: 'http://192.168.1.100:5003'
+
+
