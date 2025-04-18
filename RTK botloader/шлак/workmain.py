@@ -18,9 +18,9 @@ class ModbusProvider:
         self.RobotTake11 = 0 # Взял плату 11
         self.Table12free = 0 # Стол один ложе 2 свободно
         # То что я отдаю в питон
-        self.outTable11free = 0 # Стол один ложе 1 освободи
-        self.outRobotTake11 = 0 # Возьми плату 11
-        self.outTable12free = 0 # Стол один ложе 2 освободи
+        self.subTable11free = 0 # Стол один ложе 1 освободи
+        self.subRobotTake11 = 0 # Возьми плату 11
+        self.subTable12free = 0 # Стол один ложе 2 освободи
 
         # Запуск Modbus TCP сервера в отдельном потоке
         self.server_thread = threading.Thread(target=self.run_modbus_server, daemon=True)
@@ -40,14 +40,14 @@ class ModbusProvider:
         """Обновление значений регистров."""
         while True:
             # Чтение значений из регистров 0 и 1 (input1 и input2)
-            self.Table11free = self.store.getValues(3, 0, count=1)[0]  # 3 - код функции для holding registers
-            self.RobotTake11 = self.store.getValues(3, 1, count=1)[0]
-            self.Table12free = self.store.getValues(3, 2, count=1)[0]
+            self.subTable11free = self.store.getValues(3, 0, count=1)[0]  # 3 - код функции для holding registers
+            self.subRobotTake11 = self.store.getValues(3, 1, count=1)[0]
+            self.subTable12free = self.store.getValues(3, 2, count=1)[0]
 
             # Запись значений в регистры 2 и 3 (output1 и output2)
-            self.store.setValues(3, 31, [self.outTable11free])
-            self.store.setValues(3, 32, [self.outRobotTake11])
-            self.store.setValues(3, 33, [self.outTable12free])
+            self.store.setValues(3, 31, [self.Table11free])
+            self.store.setValues(3, 32, [self.RobotTake11])
+            self.store.setValues(3, 33, [self.Table12free])
 
             time.sleep(1)
 
@@ -56,9 +56,9 @@ class ModbusProvider:
         return self.Table11free
     
 
-    def set_outTable11free(self, outTable11free):
+    def set_outTable11free(self, subTable11free):
         """Установка данных в регистры."""
-        self.outTable11free = outTable11free
+        self.subTable11free = subTable11free
         print(f"Modbus - Сдвинь плату освободив ложе1. {self.outTable11free}")
 
     
@@ -66,9 +66,9 @@ class ModbusProvider:
         """Получение данных из регистров."""
         return self.RobotTake11
     
-    def set_outRobotTake11(self, outRobotTake11):
+    def set_outRobotTake11(self, subRobotTake11):
         """Установка данных в регистры."""
-        self.outRobotTake11 = outRobotTake11
+        self.subRobotTake11 = subRobotTake11
         print(f"Modbus - Робот забери плату 1. {self.outRobotTake11}")
 
     def get_inTable12free(self):
@@ -76,10 +76,10 @@ class ModbusProvider:
         return self.Table12free
     
 
-    def set_outTable12free(self, outTable12free):
+    def set_outTable12free(self, subTable12free):
         """Установка данных в регистры."""
-        self.outTable12free = outTable12free
-        print(f"Modbus - Сдвинь плату освободив ложе1. {self.outTable12free}")
+        self.subTable12free = subTable12free
+        print(f"Modbus - Сдвинь плату освободив ложе1. {self.subTable12free}")
 
 
 #############################################################################################
@@ -303,9 +303,6 @@ if __name__ == "__main__":
     # Создание объекта и выполнение алгоритма
     table = Table()
     modbus_provider = ModbusProvider()
-
-    modbus_provider.set_outTable11free(1)
-
 
     # Выполнение первого цикла
     flag1 = True
