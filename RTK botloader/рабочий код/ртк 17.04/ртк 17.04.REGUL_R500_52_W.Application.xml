@@ -10,6 +10,10 @@
     <TypeSimple name="T_BYTE" size="1" swapsize="1" typeclass="Byte" iecname="BYTE" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeSimple name="T_WSTRING" size="162" swapsize="2" typeclass="WString" iecname="WSTRING" />
+    <TypeArray name="T_ARRAY__1__100__OF_WSTRING" size="16200" nativesize="16200" typeclass="Array" iecname="ARRAY [1..100] OF WSTRING" basetype="T_WSTRING">
+      <ArrayDim minrange="1" maxrange="100" />
+    </TypeArray>
   </TypeList>
   <NodeList>
     <Node name="Application">
@@ -39,6 +43,21 @@
         <Node name="yellow" type="T_BOOL" access="ReadWrite" />
         <Node name="Zdown" type="T_BOOL" access="ReadWrite" />
         <Node name="Zup" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="UserInterface">
+        <Node name="ButtonLoadOrders" type="T_BOOL" access="ReadWrite" />
+        <Node name="ButtonSelectOrder" type="T_BOOL" access="ReadWrite" />
+        <Node name="hasData" type="T_BOOL" access="ReadWrite" />
+        <Node name="i" type="T_INT" access="ReadWrite" />
+        <Node name="iMaxOrderNumber" type="T_INT" access="ReadWrite" />
+        <Node name="iOrderIndex" type="T_INT" access="ReadWrite" />
+        <Node name="Order" type="T_WSTRING" access="ReadWrite" />
+        <Node name="order2" type="T_WSTRING" access="ReadWrite" />
+        <Node name="orderNode" type="T_ARRAY__1__100__OF_WSTRING" access="ReadWrite" />
+        <Node name="search" type="T_BOOL" access="ReadWrite" />
+        <Node name="search_result" type="T_ARRAY__1__100__OF_WSTRING" access="ReadWrite" />
+        <Node name="State" type="T_WSTRING" access="ReadWrite" />
+        <Node name="VAL1" type="T_ARRAY__1__100__OF_WSTRING" access="ReadWrite" />
       </Node>
     </Node>
   </NodeList>
