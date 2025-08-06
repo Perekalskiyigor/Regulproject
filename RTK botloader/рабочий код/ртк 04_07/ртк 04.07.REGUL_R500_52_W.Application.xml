@@ -7,7 +7,9 @@
   </Header>
   <TypeList>
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_BYTE" size="1" swapsize="1" typeclass="Byte" iecname="BYTE" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
     <TypeSimple name="T_WSTRING" size="162" swapsize="2" typeclass="WString" iecname="WSTRING" />
     <TypeArray name="T_ARRAY__1__100__OF_WSTRING" size="16200" nativesize="16200" typeclass="Array" iecname="ARRAY [1..100] OF WSTRING" basetype="T_WSTRING">
       <ArrayDim minrange="1" maxrange="100" />
@@ -18,9 +20,11 @@
       <Node name="table2">
         <Node name="DIRX" type="T_BOOL" access="ReadWrite" />
         <Node name="DIRZ" type="T_BOOL" access="ReadWrite" />
+        <Node name="duty" type="T_BYTE" access="ReadWrite" />
         <Node name="ENAX" type="T_BOOL" access="ReadWrite" />
         <Node name="ENAZ" type="T_BOOL" access="ReadWrite" />
         <Node name="error" type="T_INT" access="ReadWrite" />
+        <Node name="freq" type="T_UINT" access="ReadWrite" />
         <Node name="green" type="T_BOOL" access="ReadWrite" />
         <Node name="IsInitializedX" type="T_BOOL" access="ReadWrite" />
         <Node name="IsInitializedZ" type="T_BOOL" access="ReadWrite" />
@@ -29,6 +33,7 @@
         <Node name="Reg_move_table" type="T_INT" access="ReadWrite" />
         <Node name="Reg_updown_bootloader" type="T_INT" access="ReadWrite" />
         <Node name="Rob_Action" type="T_INT" access="ReadWrite" />
+        <Node name="step" type="T_BOOL" access="ReadWrite" />
         <Node name="sub_kob_Rob_Action" type="T_INT" access="ReadWrite" />
         <Node name="Sub_Reg_move_table" type="T_INT" access="ReadWrite" />
         <Node name="Sub_Reg_updown_bootloader" type="T_INT" access="ReadWrite" />
